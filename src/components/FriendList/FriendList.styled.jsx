@@ -17,7 +17,7 @@ export const ListItem = styled.li`
   width: 400px;
   padding: 20px;
   background-color: #ebecf0;
-  box-shadow: 13px 13px 26px -9px rgba(0,0,0,0.55);
+  box-shadow: 13px 13px 26px -9px rgba(0,0,0,0.53);
   transition: all 0.3s ease;
   &:hover {
     box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
