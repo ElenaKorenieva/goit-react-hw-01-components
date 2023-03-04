@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import { Section, Title, StatList, ListItem, ItemLabel, ItemPercentage } from './Statistics.styled'
+import { Section, Title, StatListEl, ListItem, ItemLabel, ItemPercentage } from './Statistics.styled'
 
 function randomHexColor() {
     return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
@@ -8,15 +8,16 @@ function randomHexColor() {
 export default function Statistics({title, stats}) {
     return (
         <Section>
-  {title && <Title>Upload stats</Title>}
-
-  {stats && (<StatList>
-    {stats.map(elem => (<ListItem key={elem.id} style={{ backgroundColor: randomHexColor() }}>
-      <ItemLabel>{elem.label}</ItemLabel>
-      <ItemPercentage>{elem.percentage}</ItemPercentage>
-    </ListItem>))}
-    </StatList>)}
-</Section>
+            {title && <Title>{title}</Title>}
+            {stats && (<StatListEl>
+                {stats.map((elem) => (
+                    <ListItem key={elem.id} style={{ backgroundColor: randomHexColor() }}>
+                        <ItemLabel>{elem.label}</ItemLabel>
+                        <ItemPercentage>{elem.percentage}</ItemPercentage>
+                    </ListItem>
+                ))}
+            </StatListEl>)}
+        </Section>
     )
 }
 

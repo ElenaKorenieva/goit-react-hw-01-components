@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import { Table, TableHead } from './TransactionsList.styled';
-import TransactionsListItem from './TransactionsListItem';
+import TransactionsListItem from './TransactionsRow';
 
 export default function Transactions({items}) {
     return (
@@ -28,5 +28,12 @@ export default function Transactions({items}) {
 }
 
 Transactions.propTypes = {
-    items: PropTypes.array.isRequired,
+  items: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      type: PropTypes.string.isRequired,
+      amount: PropTypes.string.isRequired,
+      currency: PropTypes.string.isRequired,
+      })
+    )
   };

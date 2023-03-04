@@ -16,7 +16,7 @@ export const Title = styled.h2`
     line-height: 1;
 `;
 
-export const StatList = styled.ul`
+export const StatListEl = styled.ul`
     display: flex;
     width: 100%;
     padding-bottom: 10px;
