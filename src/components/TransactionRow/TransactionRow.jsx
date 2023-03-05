@@ -1,23 +1,23 @@
 import PropTypes from 'prop-types';
 
 import {
-  TransactionRow,
+  TransactionRowItem,
   TransactionType,
   TransactionAmount,
   TransactionCurrency,
-} from './TransactionsList.styled';
+} from '../TransactionRow/TransactionRow.styled';
 
-export default function TransactionsListItem({ type, amount, currency }) {
+export default function TransactionRow({ type, amount, currency }) {
   return (
-    <TransactionRow>
+    <TransactionRowItem>
       <TransactionType>{type}</TransactionType>
       <TransactionAmount>{amount}</TransactionAmount>
       <TransactionCurrency>{currency}</TransactionCurrency>
-    </TransactionRow>
+    </TransactionRowItem>
   );
 }
 
-TransactionsListItem.propTypes = {
+TransactionRow.propTypes = {
   type: PropTypes.string.isRequired,
   amount: PropTypes.string.isRequired,
   currency: PropTypes.string.isRequired,

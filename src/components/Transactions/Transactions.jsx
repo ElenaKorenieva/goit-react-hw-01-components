@@ -1,30 +1,30 @@
 import PropTypes from 'prop-types';
-import { Table, TableHead } from './TransactionsList.styled';
-import TransactionsListItem from './TransactionsRow';
+import { Table, TableHead } from './Transactions.styled';
+import TransactionRow from '../TransactionRow/TransactionRow';
 
-export default function Transactions({items}) {
-    return (
-        <Table>
-  <thead>
-    <tr>
-      <TableHead>Type</TableHead>
-      <TableHead>Amount</TableHead>
-      <TableHead>Currency</TableHead>
-    </tr>
-  </thead>
+export default function Transactions({ items }) {
+  return (
+    <Table>
+      <thead>
+        <tr>
+          <TableHead>Type</TableHead>
+          <TableHead>Amount</TableHead>
+          <TableHead>Currency</TableHead>
+        </tr>
+      </thead>
 
-  <tbody>
-  {items.map(({ id, type, amount, currency }) => (
-          <TransactionsListItem
+      <tbody>
+        {items.map(({ id, type, amount, currency }) => (
+          <TransactionRow
             key={id}
             type={type}
             amount={amount}
             currency={currency}
           />
         ))}
-  </tbody>
-</Table>
-    )
+      </tbody>
+    </Table>
+  );
 }
 
 Transactions.propTypes = {
@@ -34,6 +34,6 @@ Transactions.propTypes = {
       type: PropTypes.string.isRequired,
       amount: PropTypes.string.isRequired,
       currency: PropTypes.string.isRequired,
-      })
-    )
-  };
+    })
+  ),
+};
